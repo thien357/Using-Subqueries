@@ -1,0 +1,10 @@
+# Oracle SQL Query
+# A subquery is embedded in another query. It is typically used for calculations or logical tests, 
+# and it provides a value or set of data to be passed into the main portion of the query.
+UPDATE table
+SET column = (SELECT column
+              FROM table_b
+              WHERE table.column = table_b.column)
+WHERE EXISTS (SELECT column
+              FROM table_b
+              WHERE table.column = table_b.column);
